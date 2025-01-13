@@ -1,0 +1,7 @@
+begin
+  for x in ( select chr(seq) lett from (select level seq from dual connect by level < 100) where seq between 65 and 90 order by 1 desc)
+   loop
+     dbms_output.put_line(x.lett);
+   end loop;
+end;
+/
