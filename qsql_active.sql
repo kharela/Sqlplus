@@ -17,7 +17,7 @@ set echo off ver off head off feed off
 select case when '&&1' is null then '.*' else '&1' end as fltr_username from dual;
 
 --custom settings
-set lines 999 long 10000 term on head on ver on feed on
+set lines 999 long 10000 term on head on ver on feed on pages 50
 col username for a12
 col sql_text for a100 
 

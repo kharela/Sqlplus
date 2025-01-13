@@ -8,7 +8,7 @@
 -- Table name pattern
 
 -- usage:
--- qdid "user1|kh[a,u]..la|^c##" "tab1|tab2"
+-- qdtab "user1|kh[a,u]..la|^c##" "tab1|tab2"
 **********************************************************/
 --set defaults for parametersms
 col fltr_owner new_value v_owner noprint
@@ -19,7 +19,7 @@ select case when '&&1' is null then '.*' else '&1' end as fltr_owner from dual;
 select case when '&&2' is null then '.*' else '&2' end as fltr_tab from dual;
 
 --custom settings
-set lines 999 long 10000 term on head on ver on feed on page 50
+set lines 999 long 10000 term on head on ver on feed on pages 50
 set echo off
 
 col owner for a12

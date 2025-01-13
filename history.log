@@ -1,0 +1,23 @@
+d9c250fe-756b-471e-831e-e17d1c657719:1736796155652:0:S:@qutab kharela oc
+283f21fc-0e39-4bfd-9828-acdb86fffbe2:1736796255845:0:S:col fltr_owner new_value v_owner noprint
+969a9564-b92c-4b5a-adb2-d99ec13c754f:1736796255939:0:S:col fltr_tab    new_value v_tablename noprint
+bb12d9b6-65c8-4ea1-9008-88a210a2ddfe:1736796256098:0:S:set echo off ver off head off feed off
+1dc63dc9-58d9-4e1f-ad6a-6d941a838159:1736796256618:10:S:select case when '&&1' is null then '.*' else '&1' end as fltr_owner from dual;
+6d9eb89b-8662-4cb1-99c1-11f70a011369:1736796256946:7:S:select case when '&&2' is null then '.*' else '&2' end as fltr_tab from dual;
+78749fdc-6435-42a6-9a95-703ff5813403:1736796257234:0:S:set lines 999 long 10000 term on head on ver on feed on
+3a8db7a3-0d1e-4c05-a181-8c72ad34141e:1736796257341:0:S:col owner for a12
+9fa452ff-1899-4cad-8b18-5e6eb8cb8730:1736796257436:0:S:col table_name for a30
+2ed50276-d6f7-4761-bc57-b9335361e795:1736796257530:0:S:col tablespace_name for a30
+35cccade-44a9-445a-ab9e-8920614b9360:1736796257613:0:S:col part for a4
+c22ab205-9704-434a-bdd7-841b3a6df853:1736796261733:1662:S:select\n    owner,\n    table_name,\n    tablespace_name,\n    num_rows,\n    (select sum(bytes)/1048576\n        from dba_segments\n        where owner=t.owner\n          and segment_name=t.table_name) as "SIZE",\n    case\n        when (select count(*)\n                from all_tab_partitions\n                where table_owner=t.owner\n                  and table_name=t.table_name) > 0\n            then 'YES'\n            else 'NO'\n        end as Part\n    from all_tables t\n      where regexp_like(owner, '&v_owner', 'i')\n        and regexp_like(table_name, '&v_tablename', 'i');
+b2a4502c-4365-4e0c-97a6-ba7ef4becaa5:1736796289561:0:F:dev 2=""
+27f19c0f-9e6a-41a3-a667-345aad1e153b:1736796296539:0:S:def 2=""
+89e82084-9914-4a1b-8a4f-8370ee353c40:1736796309620:0:S:@qutab kharela ""
+7c2f5bec-d8eb-4fff-94e1-8ab022c5ac31:1736796377315:0:S:@qutab sys tab
+49a28272-8864-4ec1-8711-4703368f4944:1736796415283:0:S:@qutab sys table
+679dd18b-5394-42b1-a96f-d95c7266590b:1736796480010:0:S:@qutab sys table_
+d84b3fb2-ef07-48f3-9063-34d8334865e2:1736796664555:0:S:@qutab sys table_
+2a628ba4-d480-4336-8de5-b3bc4241233a:1736797126111:0:S:@qutab sys table_
+1f13482f-f3cc-43ef-98f8-9b327e9ecb92:1736797749924:0:S:@qutab sys table_
+878cb7eb-2b78-47da-8638-3e8e094285b7:1736797961404:0:S:@qutab sys table_
+887dae39-2981-4ed5-b65f-2bc4c06998ff:1736798067148:0:S:@qsql_active ""
